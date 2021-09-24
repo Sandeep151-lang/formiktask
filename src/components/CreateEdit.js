@@ -50,8 +50,6 @@ const CreateEdit = () => {
         setform_data({ ...form_data, [name]: e.target.value });
     }
 
-
-
     return <>
         <div className="container text-center"><h1>Add User</h1></div>
         <Container className="themed-container">

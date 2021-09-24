@@ -23,17 +23,17 @@ function App() {
         </div>
         <Switch>
           <div className="container component">
-            {/* listing user component */}
-            <Route exact path="/" component={User} />
-
             {/* Add user component */}
-            <Route exact path="/create" component={CreateEdit} />
+            <Route  path="/create" component={CreateEdit} />
 
             {/* Edit The details of user component */}
-            <Route exact path="/edit/:id" component={EditUser} />
+            <Route  path="/edit/:id" component={EditUser} />
 
             {/* View particular user details component */}
             <Route path="/view/:id" component={ViewUser} />
+
+            {/* listing user component */}
+            <Route exact path="/" component={User} />
           </div>
         </Switch>
       </Router>

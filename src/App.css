@@ -1,12 +1,14 @@
 #header {
-    position: fixed;
-    width: 220px;
+    position: absolute;
+    width: 178px;
+    
   }
   #header .pro-sidebar {
     height: 100vh;
+    
   }
   #header .closemenu {
-    color: rgb(218, 209, 209);
+    color: rgb(255, 199, 199);
     position: absolute;
     right: 0;
     z-index: 9999;
@@ -57,14 +59,17 @@
     padding: 20px;
   }
   .component{
-    
     background-color: whitesmoke;
+    height: 100%;
+    
   }
 
   
   @media only screen and (max-width: 720px) {
     html {
       overflow: hidden;
+      font-size: 0.7rem;
+      
     }
     .component{
      width: 70%;
