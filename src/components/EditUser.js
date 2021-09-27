@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { TextField, Button } from '@mui/material';
-import { Col, Form, FormGroup, Container } from 'reactstrap';
+import { Form, FormGroup, Container } from 'reactstrap';
 import { useParams, useHistory } from 'react-router-dom';
 import axios from 'axios';
 
@@ -47,18 +47,18 @@ const EditUser = () => {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
     return <>
-        <div className="container bg-light"><h1>EditUser</h1></div>
-        <Container className="themed-container">
+        <div className="container text-center"><h1 className="font-weight-bold text-dark">EditUser</h1></div>
+        <Container className="themed-container" style={{ "width": "70%" }}>
             <Form method="POST">
-                <FormGroup row className="py-5">
-                    <Col sx={4}>
-                        <TextField id="fname" label="First name" type="text" variant="filled" name="fname" value={form_data.fname} onChange={handlevent} autoComplete="off" required />
-                    </Col>
-                    <Col sx={4}>
-                        <TextField id="lname" label="Last name" type="text" variant="filled" name="lname" value={form_data.lname} onChange={handlevent} required />
-                    </Col>
+                <FormGroup row className="py-3" color="red">
+                    <TextField color="warning" id="fname" label="First name" type="text" variant="filled" name="fname" value={form_data.fname} onChange={handlevent} autoComplete="off" required />
                 </FormGroup>
-                <Button className="mb-5" variant="contained" onClick={(e) => EditUser(e)}>Submit</Button>
+                <FormGroup row className="py-3">
+                    <TextField color="warning" id="lname" label="Last name" type="text" variant="filled" name="lname" value={form_data.lname} onChange={handlevent} required />
+                </FormGroup>
+                <FormGroup row>
+                    <Button className="mt-3 py-1" style={{ "width": "100%" }} variant="contained" onClick={(e) => EditUser(e)}>Submit</Button>
+                </FormGroup>
             </Form>
         </Container>
     </>

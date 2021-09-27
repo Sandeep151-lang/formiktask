@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
-import { Table } from 'reactstrap';
 import axios from 'axios'
 import { Button } from '@mui/material';
 import { useHistory } from "react-router-dom";
+import { Card } from 'reactstrap'
 
 
 //User List components
@@ -48,34 +48,35 @@ const User = () => {
     }, [])
     return <>
         <div>
-            <h1>UserList</h1>
+            <h1 className="text-center text-dark font-weight-bold">User List</h1>
         </div>
-        <div>
-            <Table striped>
-                <thead>
-                    <tr>
-                        <th>Sr. No</th>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Operation</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {data.map((item, index) => (
-                        <tr key={index}>
-                            <th scope="row">{item.id}</th>
-                            <td>{item.fname}</td>
-                            <td>{item.lname}</td>
-
-                            <td ><Button variant="contained" onClick={(e) => viewUser(item.id)} >View</Button></td>
-                            <td ><Button variant="contained" color="warning" onClick={(e) => deletuser(item.id)}>Delete</Button></td>
-                            <td><Button variant="contained" color="success" onClick={(e) => edituser(item.id)}>Edit</Button></td>
+        <Card>
+            <div className="container overflow-auto table-striped">
+                <table className="table tabs">
+                    <thead>
+                        <tr>
+                            <th className="text-center mt-1">Sr. No</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th colSpan="3" className="mr-2 text-center">Operation</th>
                         </tr>
-                    )
-                    )}
-                </tbody>
-            </Table>
-        </div>
+                    </thead>
+                    <tbody>
+                        {data.map((item, index) => (
+                            <tr key={index}>
+                                <th className="text-center" scope="row">{index + 1}</th>
+                                <td>{item.fname}</td>
+                                <td>{item.lname}</td>
+                                <td className="text-center" ><Button variant="contained" onClick={(e) => viewUser(item.id)} >View</Button></td>
+                                <td className="text-center"><Button variant="contained" color="warning" onClick={(e) => deletuser(item.id)}>Delete</Button></td>
+                                <td className="text-center"><Button variant="contained" color="success" onClick={(e) => edituser(item.id)}>Edit</Button></td>
+                            </tr>
+                        )
+                        )}
+                    </tbody>
+                </table>
+            </div>
+        </Card>
     </>
 }
 

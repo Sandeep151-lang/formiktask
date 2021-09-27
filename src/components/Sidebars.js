@@ -1,64 +1,71 @@
-import React, { useState } from 'react'
-import data from '../data';
+
+import web from './image/undraw_profile.svg'
 import { Link } from 'react-router-dom'
-import {
-    ProSidebar,
-    Menu,
-    MenuItem,
-    SidebarHeader,
-    SidebarFooter,
-    SidebarContent,
-} from "react-pro-sidebar";
-import { FiHome, FiLogOut, FiArrowLeftCircle, FiArrowRightCircle } from "react-icons/fi";
-import "react-pro-sidebar/dist/css/styles.css";
 
 
-//Sidebar components
+
 const Sidebars = () => {
-    const [menuCollapse, setMenuCollapse] = useState(false)
-    const menuIconClick = () => {
-        menuCollapse ? setMenuCollapse(false) : setMenuCollapse(true);
-    };
+
+
     return (
-        <div id="header">
-
-            <ProSidebar collapsed={menuCollapse}>
-                <SidebarHeader>
-                    <div className="logotext">
-
-                        <p>{menuCollapse ? "Logo" : "Big Logo"}</p>
+        <>
+            <ul className="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+                <Link to="" className="sidebar-brand d-flex align-items-center justify-content-center">
+                    <div className="sidebar-brand-icon rotate-n-15">
+                        <i className="fas fa-laugh-wink"></i>
                     </div>
-                    <div className="closemenu" onClick={menuIconClick}>
-                        {menuCollapse ? (
-                            <FiArrowRightCircle />
-                        ) : (
-                            <FiArrowLeftCircle />
-                        )}
+                    <div className="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+                </Link>
+                <hr className="sidebar-divider my-0" />
+                <li className="nav-item active">
+                    <Link to="/" className="nav-link" href="index.html">
+                        <i className="fas fa-fw fa-tachometer-alt"></i>
+                        <span>Dashboard</span></Link>
+                </li>
+                <hr className="sidebar-divider" />
+                <div className="sidebar-heading">
+                    Interface
+                </div>
+                <li className="nav-item">
+                    <Link to="/" className="nav-link collapsed" data-toggle="collapse" data-target="#collapseTwo"
+                        aria-expanded="true" aria-controls="collapseTwo">
+                        <i className="fas fa-fw fa-cog"></i>
+                        <span>User List</span>
+                    </Link>
+                </li>
+                <li className="nav-item">
+                    <Link to="/create" className="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+                        aria-expanded="true" aria-controls="collapseUtilities">
+                        <i className="fas fa-fw fa-wrench"></i>
+                        <span>Add User</span>
+                    </Link>
+                </li>
+                <li className="nav-item">
+                    <div id="collapsePages" className="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                        <div className="bg-white py-2 collapse-inner rounded">
+                            <h6 className="collapse-header">Login Screens:</h6>
+                            <Link to="" className="collapse-item" >Login</Link>
+                            <Link to="" className="collapse-item">Register</Link>
+                            <Link to="" className="collapse-item" >Forgot Password</Link>
+                            <div className="collapse-divider"></div>
+                            <h6 className="collapse-header">Other Pages:</h6>
+                            <Link to="" className="collapse-item" >404 Page</Link>
+                            <Link to="" className="collapse-item" >Blank Page</Link>
+                        </div>
                     </div>
-                </SidebarHeader>
-                <SidebarContent>
-                    <Menu iconShape="square">
-                        <MenuItem active={true} icon={<FiHome />}>
-                            Home <Link to="/" />
-                        </MenuItem>
+                </li>
+                <hr className="sidebar-divider d-none d-md-block" />
+                <div className="text-center d-none d-md-inline">
+                    <button className="rounded-circle border-0" id="sidebarToggle"></button>
+                </div>
+                <div className="sidebar-card d-none d-lg-flex">
+                    <img className="sidebar-card-illustration mb-2" src={web} alt="..." />
+                    <p className="text-center mb-2"><strong>SB Admin Pro</strong> is packed with premium features, components, and more!</p>
+                    <Link to="" className="btn btn-success btn-sm">Upgrade to Pro!</Link>
+                </div>
+            </ul>
+        </>
+    );
+};
 
-
-                        {/* dynamic sidebar data from data.js file  */}
-                        {data.map((item, index) => {
-                            return <MenuItem key={index} icon={item.icon}>{item.type} <Link to={item.link} /></MenuItem>
-                        })}
-
-
-                    </Menu>
-                </SidebarContent>
-                <SidebarFooter>
-                    <Menu iconShape="square">
-                        <MenuItem icon={<FiLogOut />}>Logout</MenuItem>
-                    </Menu>
-                </SidebarFooter>
-            </ProSidebar>
-        </div>
-    )
-}
-
-export default Sidebars
+export default Sidebars;

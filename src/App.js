@@ -1,44 +1,35 @@
-
-import './App.css';
-import Sidebars from './components/Sidebars';
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import React from 'react'
+import Sidebars from './components/Sidebars'
+import './App.css'
+import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
+import Dashboard from './components/Dashboard';
 import User from './components/User';
-import CreateEdit from './components/CreateEdit';
+import CreateEdit from './components/CreateEdit'
 import EditUser from './components/EditUser';
 import ViewUser from './components/ViewUser';
-import Dashboard from './components/Dashboard';
 
 
-
-
-function App() {
-
-  return (
-
-    <>
-      <Router>
-        <Sidebars />
-        <div className="container dashboard">
-          <Dashboard />
-        </div>
-        <Switch>
-          <div className="container component">
-            {/* Add user component */}
-            <Route  path="/create" component={CreateEdit} />
-
-            {/* Edit The details of user component */}
-            <Route  path="/edit/:id" component={EditUser} />
-
-            {/* View particular user details component */}
-            <Route path="/view/:id" component={ViewUser} />
-
-            {/* listing user component */}
-            <Route exact path="/" component={User} />
+const App = () => {
+  return <>
+    <body id="page-top">
+      <div id="wrapper">
+        <Router>
+          <Sidebars />
+          <div id="content-wrapper" className="d-flex flex-column">
+            <div id="content" >
+              <Dashboard />
+              <Switch>
+                <Route exact path="/" component={User} />
+                <Route exact path="/create" component={CreateEdit} />
+                <Route exact path="/edit/:id" component={EditUser} />
+                <Route exact path="/view/:id" component={ViewUser} />
+                <Redirect to='/' />
+              </Switch>
+            </div>
           </div>
-        </Switch>
-      </Router>
-    </>
-  );
+        </Router>
+      </div>
+    </body>
+  </>
 }
-
-export default App;
+export default App
