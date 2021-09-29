@@ -21,7 +21,6 @@ const User = () => {
     const getuser = async () => {
         try {
             const result = await axios.get(`https://61485ca2035b3600175b9dc6.mockapi.io/api/v1/users/${id}`);
-            console.log(result.data)
             setdata(result.data)
         } catch (err) {
             console.log(err)

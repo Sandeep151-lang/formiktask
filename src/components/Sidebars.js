@@ -1,5 +1,5 @@
 
-import web from './image/undraw_profile.svg'
+import web from './images/undraw_rocket.svg'
 import { Link } from 'react-router-dom'
 
 
@@ -24,17 +24,17 @@ const Sidebars = () => {
                 </li>
                 <hr className="sidebar-divider" />
                 <div className="sidebar-heading">
-                    Interface
+                    CRUD
                 </div>
                 <li className="nav-item">
-                    <Link to="/" className="nav-link collapsed" data-toggle="collapse" data-target="#collapseTwo"
+                    <Link to="/" className="nav-link collapsed" data-target="#collapseTwo"
                         aria-expanded="true" aria-controls="collapseTwo">
                         <i className="fas fa-fw fa-cog"></i>
                         <span>User List</span>
                     </Link>
                 </li>
                 <li className="nav-item">
-                    <Link to="/create" className="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+                    <Link to="/create" className="nav-link collapsed" data-target="#collapseUtilities"
                         aria-expanded="true" aria-controls="collapseUtilities">
                         <i className="fas fa-fw fa-wrench"></i>
                         <span>Add User</span>

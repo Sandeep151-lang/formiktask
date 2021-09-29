@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import web from './image/undraw_profile.svg'
+import web from './images/undraw_profile.svg'
 
 const Dashboard = () => {
     return (
@@ -22,11 +22,13 @@ const Dashboard = () => {
                     </div>
                 </form>
                 <ul className="navbar-nav ml-auto">
+
                     <li className="nav-item dropdown no-arrow d-sm-none">
                         <Link to="" className="nav-link dropdown-toggle" id="searchDropdown" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i className="fas fa-search fa-fw"></i>
                         </Link>
+
                         <div className="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
                             aria-labelledby="searchDropdown">
                             <form className="form-inline mr-auto w-100 navbar-search">
@@ -43,18 +45,21 @@ const Dashboard = () => {
                             </form>
                         </div>
                     </li>
+
                     <li className="nav-item dropdown no-arrow mx-1">
                         <Link to="" className="nav-link dropdown-toggle" id="alertsDropdown" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i className="fas fa-bell fa-fw"></i>
+
                             <span className="badge badge-danger badge-counter">3+</span>
                         </Link>
+
                         <div className="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
                             aria-labelledby="alertsDropdown">
                             <h6 className="dropdown-header">
                                 Alerts Center
                             </h6>
-                            <Link to="" className="dropdown-item d-flex align-items-center">
+                            <Link to="" className="dropdown-item d-flex align-items-center" >
                                 <div className="mr-3">
                                     <div className="icon-circle bg-primary">
                                         <i className="fas fa-file-alt text-white"></i>
@@ -87,23 +92,27 @@ const Dashboard = () => {
                                     Spending Alert: We've noticed unusually high spending for your account.
                                 </div>
                             </Link>
-                            <Link to="" className="dropdown-item text-center small text-gray-500">Show All Alerts</Link>
+                            <Link to="" className="dropdown-item text-center small text-gray-500" >Show All Alerts</Link>
                         </div>
                     </li>
+
+
                     <li className="nav-item dropdown no-arrow mx-1">
                         <Link to="" className="nav-link dropdown-toggle" id="messagesDropdown" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i className="fas fa-envelope fa-fw"></i>
+
                             <span className="badge badge-danger badge-counter">7</span>
                         </Link>
+
                         <div className="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
                             aria-labelledby="messagesDropdown">
                             <h6 className="dropdown-header">
                                 Message Center
                             </h6>
-                            <Link to="" className="dropdown-item d-flex align-items-center">
+                            <Link to="" className="dropdown-item d-flex align-items-center" >
                                 <div className="dropdown-list-image mr-3">
-                                    <img className="rounded-circle" src={web}
+                                    <img className="rounded-circle" src="img/undraw_profile_1.svg"
                                         alt="..." />
                                     <div className="status-indicator bg-success"></div>
                                 </div>
@@ -113,9 +122,9 @@ const Dashboard = () => {
                                     <div className="small text-gray-500">Emily Fowler · 58m</div>
                                 </div>
                             </Link>
-                            <Link to="" className="dropdown-item d-flex align-items-center">
+                            <Link to="" className="dropdown-item d-flex align-items-center" >
                                 <div className="dropdown-list-image mr-3">
-                                    <img className="rounded-circle" src={web}
+                                    <img className="rounded-circle" src="img/undraw_profile_2.svg"
                                         alt="..." />
                                     <div className="status-indicator"></div>
                                 </div>
@@ -125,9 +134,9 @@ const Dashboard = () => {
                                     <div className="small text-gray-500">Jae Chun · 1d</div>
                                 </div>
                             </Link>
-                            <Link to="" className="dropdown-item d-flex align-items-center">
+                            <Link to="" className="dropdown-item d-flex align-items-center" >
                                 <div className="dropdown-list-image mr-3">
-                                    <img className="rounded-circle" src={web}
+                                    <img className="rounded-circle" src="img/undraw_profile_3.svg"
                                         alt="..." />
                                     <div className="status-indicator bg-warning"></div>
                                 </div>
@@ -137,10 +146,10 @@ const Dashboard = () => {
                                     <div className="small text-gray-500">Morgan Alvarez · 2d</div>
                                 </div>
                             </Link>
-                            <Link to="" className="dropdown-item d-flex align-items-center">
+                            <Link to="" className="dropdown-item d-flex align-items-center" >
                                 <div className="dropdown-list-image mr-3">
-                                    <img className="rounded-circle" src={web}
-                                        alt="sand" />
+                                    <img className="rounded-circle" src="https://source.unsplash.com/Mv9hjnEUHR4/60x60"
+                                        alt="..." />
                                     <div className="status-indicator bg-success"></div>
                                 </div>
                                 <div>
@@ -149,26 +158,29 @@ const Dashboard = () => {
                                     <div className="small text-gray-500">Chicken the Dog · 2w</div>
                                 </div>
                             </Link>
-                            <Link to="" className="dropdown-item text-center small text-gray-500">Read More Messages</Link>
+                            <Link to="" className="dropdown-item text-center small text-gray-500" >Read More Messages</Link>
                         </div>
                     </li>
                     <div className="topbar-divider d-none d-sm-block"></div>
                     <li className="nav-item dropdown no-arrow">
-                        <Link to=" " className="nav-link dropdown-toggle" id="userDropdown" role="button"
+                        <Link to="" className="nav-link dropdown-toggle" id="userDropdown" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <span className="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
+                            <img className="img-profile rounded-circle"
+                                src={web} alt="" />
                         </Link>
+
                         <div className="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                             aria-labelledby="userDropdown">
                             <Link to="" className="dropdown-item">
                                 <i className="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                 Profile
                             </Link>
-                            <Link to="" className="dropdown-item">
+                            <Link to="" className="dropdown-item" >
                                 <i className="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
                                 Settings
                             </Link>
-                            <Link to="" className="dropdown-item">
+                            <Link to="" className="dropdown-item" >
                                 <i className="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
                                 Activity Log
                             </Link>

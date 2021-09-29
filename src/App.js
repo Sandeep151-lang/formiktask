@@ -11,25 +11,23 @@ import ViewUser from './components/ViewUser';
 
 const App = () => {
   return <>
-    <body id="page-top">
-      <div id="wrapper">
-        <Router>
-          <Sidebars />
-          <div id="content-wrapper" className="d-flex flex-column">
-            <div id="content" >
-              <Dashboard />
-              <Switch>
-                <Route exact path="/" component={User} />
-                <Route exact path="/create" component={CreateEdit} />
-                <Route exact path="/edit/:id" component={EditUser} />
-                <Route exact path="/view/:id" component={ViewUser} />
-                <Redirect to='/' />
-              </Switch>
-            </div>
+    <div id="wrapper">
+      <Router>
+        <Sidebars />
+        <div id="content-wrapper" className="d-flex flex-column">
+          <div id="content" >
+            <Dashboard />
+            <Switch>
+              <Route exact path="/" component={User} />
+              <Route exact path="/create" component={CreateEdit} />
+              <Route exact path="/edit/:id" component={EditUser} />
+              <Route exact path="/view/:id" component={ViewUser} />
+              <Redirect to='/' />
+            </Switch>
           </div>
-        </Router>
-      </div>
-    </body>
+        </div>
+      </Router>
+    </div>
   </>
 }
 export default App
