@@ -1,15 +1,19 @@
 
 import web from './images/undraw_rocket.svg'
 import { Link } from 'react-router-dom'
+import { Collapse, Button } from 'reactstrap';
+import { useState } from 'react'
 
 
 
 const Sidebars = () => {
+    const [isOpen, setIsOpen] = useState(true);
+    const toggle = () => setIsOpen(!isOpen);
 
 
     return (
         <>
-            <ul className="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+            <Collapse isOpen={isOpen} className="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
                 <Link to="" className="sidebar-brand d-flex align-items-center justify-content-center">
                     <div className="sidebar-brand-icon rotate-n-15">
                         <i className="fas fa-laugh-wink"></i>
@@ -63,7 +67,9 @@ const Sidebars = () => {
                     <p className="text-center mb-2"><strong>SB Admin Pro</strong> is packed with premium features, components, and more!</p>
                     <Link to="" className="btn btn-success btn-sm">Upgrade to Pro!</Link>
                 </div>
-            </ul>
+            </Collapse>
+            <Button onClick={toggle} className="mt-3 pb-3 side-arrow" color="success" >{(isOpen) ? <i class="fas fa-arrow-to-left"></i> : <i class="fal fa-arrow-to-right mb-2 mr-5"></i>}</Button>
+            
         </>
     );
 };

@@ -6,9 +6,7 @@ const Dashboard = () => {
     return (
         <div>
             <nav className="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-                <button id="sidebarToggleTop" className="btn btn-link d-md-none rounded-circle mr-3">
-                    <i className="fa fa-bars"></i>
-                </button>
+               
                 <form
                     className="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
                     <div className="input-group">

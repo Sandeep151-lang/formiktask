@@ -11353,4 +11353,11 @@ body.sidebar-toggled footer.sticky-footer {
   width: 100%;
 }
 
+.side-arrow{
+  height: 35px;
+  width: 35px;
+  border-radius: 50px;
+
+}
+
 /* new css */
