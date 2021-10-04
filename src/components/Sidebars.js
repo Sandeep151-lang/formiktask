@@ -68,8 +68,8 @@ const Sidebars = () => {
                     <Link to="" className="btn btn-success btn-sm">Upgrade to Pro!</Link>
                 </div>
             </Collapse>
-            <Button onClick={toggle} className="mt-3 pb-3 side-arrow" color="success" >{(isOpen) ? <i class="fas fa-arrow-to-left"></i> : <i class="fal fa-arrow-to-right mb-2 mr-5"></i>}</Button>
-            
+            <Button onClick={toggle} className="mt-3 pb-3 side-arrow" color="success" >{(isOpen) ? <i className="fas fa-arrow-to-left"></i> : <i class="fal fa-arrow-to-right mb-2 mr-5"></i>}</Button>
+
         </>
     );
 };
