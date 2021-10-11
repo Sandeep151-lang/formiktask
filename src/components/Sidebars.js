@@ -33,14 +33,14 @@ const Sidebars = () => {
                 <li className="nav-item">
                     <Link to="/" className="nav-link collapsed" data-target="#collapseTwo"
                         aria-expanded="true" aria-controls="collapseTwo">
-                        <i className="fas fa-fw fa-cog"></i>
+                        <i className="fas fa-users-cog"></i>
                         <span>User List</span>
                     </Link>
                 </li>
                 <li className="nav-item">
                     <Link to="/create" className="nav-link collapsed" data-target="#collapseUtilities"
                         aria-expanded="true" aria-controls="collapseUtilities">
-                        <i className="fas fa-fw fa-wrench"></i>
+                        <i className="far fa-user"></i>
                         <span>Add User</span>
                     </Link>
                 </li>
