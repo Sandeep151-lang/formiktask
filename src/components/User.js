@@ -3,6 +3,7 @@ import axios from 'axios'
 import { Button } from '@mui/material';
 import { useHistory } from "react-router-dom";
 import { Card } from 'reactstrap'
+import LoadingSpinners from './LoadingSpinners';
 
 
 //User List components
@@ -10,6 +11,7 @@ const User = () => {
 
     const history = useHistory();
     const [data, setdata] = useState([]);
+    const [loading,setloading]= useState(true);
     const url = `https://61485ca2035b3600175b9dc6.mockapi.io/api/v1/users`;
 
     //fetch the data
@@ -17,6 +19,7 @@ const User = () => {
         try {
             const datas = await axios.get(url);
             setdata(datas.data);
+            setloading(false);
         } catch (err) {
             console.log(err, "errr");
         }
@@ -46,38 +49,43 @@ const User = () => {
         userdata();
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
-    return <>
-        <div>
-            <h1 className="text-center text-dark font-weight-bold">User List</h1>
-        </div>
-        <Card>
-            <div className="container overflow-auto table-striped">
-                <table className="table tabs">
-                    <thead>
-                        <tr>
-                            <th className="text-center mt-1">Sr. No</th>
-                            <th>First Name</th>
-                            <th>Last Name</th>
-                            <th colSpan="3" className="mr-2 text-center">Operation</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {data.map((item, index) => (
-                            <tr key={index}>
-                                <th className="text-center" scope="row">{index + 1}</th>
-                                <td>{item.fname}</td>
-                                <td>{item.lname}</td>
-                                <td className="text-center" ><Button variant="contained" onClick={(e) => viewUser(item.id)} >View</Button></td>
-                                <td className="text-center"><Button variant="contained" color="warning" onClick={(e) => deletuser(item.id)}>Delete</Button></td>
-                                <td className="text-center"><Button variant="contained" color="success" onClick={(e) => edituser(item.id)}>Edit</Button></td>
-                            </tr>
-                        )
-                        )}
-                    </tbody>
-                </table>
+
+    if (loading) {
+        return <LoadingSpinners/>
+    } else {
+        return <>
+            <div>
+                <h1 className="text-center text-dark font-weight-bold">User List</h1>
             </div>
-        </Card>
-    </>
+            <Card>
+                <div className="container overflow-auto table-striped">
+                    <table className="table tabs">
+                        <thead>
+                            <tr>
+                                <th className="text-center mt-1">Sr. No</th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th colSpan="3" className="mr-2 text-center">Operation</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {data.map((item, index) => (
+                                <tr key={index}>
+                                    <th className="text-center" scope="row">{index + 1}</th>
+                                    <td>{item.fname}</td>
+                                    <td>{item.lname}</td>
+                                    <td className="text-center" ><Button variant="contained" onClick={(e) => viewUser(item.id)} >View</Button></td>
+                                    <td className="text-center"><Button variant="contained" color="warning" onClick={(e) => deletuser(item.id)}>Delete</Button></td>
+                                    <td className="text-center"><Button variant="contained" color="success" onClick={(e) => edituser(item.id)}>Edit</Button></td>
+                                </tr>
+                            )
+                            )}
+                        </tbody>
+                    </table>
+                </div>
+            </Card>
+        </>
+    }
 }
 
 export default User
