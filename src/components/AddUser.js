@@ -35,8 +35,8 @@ export const AddUser = () => {
             onSubmit={async (values) => {
                 // same shape as initial values
 
-                // const post = await axios.post(`https://61485ca2035b3600175b9dc6.mockapi.io/api/v1/users`, values)
-                const post = await axios.post(`/add-one-student`, values)
+                const post = await axios.post(`https://61485ca2035b3600175b9dc6.mockapi.io/api/v1/users`, values)
+                // const post = await axios.post(`/add-one-student`, values)
 
                 setinitialvalues(post)
                 history.push("/")

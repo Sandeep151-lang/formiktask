@@ -29,16 +29,13 @@ const EditUser = () => {
 
     // onchange function call of handlevent  from form 
     const handlevent = (e) => {
-        //
         const name = e.target.id;
         setform_data({ ...form_data, [name]: e.target.value });
-
     }
 
     //to fetch the userdetails loader function call
     const loaduser = async () => {
         await axios.get(`https://61485ca2035b3600175b9dc6.mockapi.io/api/v1/users/${id}`).then(resp => setform_data(resp.data))
-
     }
 
 

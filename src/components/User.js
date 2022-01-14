@@ -11,7 +11,7 @@ const User = () => {
 
     const history = useHistory();
     const [data, setdata] = useState([]);
-    const [loading,setloading]= useState(true);
+    const [loading, setloading] = useState(true);
     const url = `https://61485ca2035b3600175b9dc6.mockapi.io/api/v1/users`;
 
     //fetch the data
@@ -51,7 +51,7 @@ const User = () => {
     }, [])
 
     if (loading) {
-        return <LoadingSpinners/>
+        return <LoadingSpinners />
     } else {
         return <>
             <div>
